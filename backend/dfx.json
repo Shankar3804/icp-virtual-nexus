@@ -1,0 +1,41 @@
+
+{
+  "version": 1,
+  "canisters": {
+    "avatar": {
+      "type": "rust",
+      "package": "avatar",
+      "candid": "src/avatar/avatar.did"
+    },
+    "tickets": {
+      "type": "rust", 
+      "package": "tickets",
+      "candid": "src/tickets/tickets.did"
+    },
+    "vr_session": {
+      "type": "rust",
+      "package": "vr_session", 
+      "candid": "src/vr_session/vr_session.did"
+    },
+    "frontend": {
+      "type": "assets",
+      "source": ["../dist"]
+    }
+  },
+  "networks": {
+    "local": {
+      "bind": "127.0.0.1:4943",
+      "type": "ephemeral"
+    },
+    "ic": {
+      "providers": ["https://mainnet.dfinity.network"],
+      "type": "persistent"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  }
+}

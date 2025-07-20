@@ -1,0 +1,30 @@
+
+type Ticket = record {
+    id : nat64;
+    event_name : text;
+    owner : principal;
+    minted_at : nat64;
+    token_id : text;
+    metadata : opt text;
+};
+
+type MintTicketRequest = record {
+    event_name : text;
+    metadata : opt text;
+};
+
+type TicketError = variant {
+    Unauthorized;
+    InvalidEventName;
+    NotFound;
+    TransferFailed;
+};
+
+service : {
+    mint_ticket : (MintTicketRequest) -> (variant { Ok : Ticket; Err : TicketError });
+    get_ticket : (nat64) -> (variant { Ok : Ticket; Err : TicketError }) query;
+    get_my_tickets : () -> (vec Ticket) query;
+    get_tickets_by_owner : (principal) -> (vec Ticket) query;
+    transfer_ticket : (nat64, principal) -> (variant { Ok : Ticket; Err : TicketError });
+    total_tickets : () -> (nat64) query;
+}

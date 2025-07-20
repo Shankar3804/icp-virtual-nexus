@@ -1,0 +1,27 @@
+
+type Avatar = record {
+    name : text;
+    owner : principal;
+    created_at : nat64;
+    metadata : opt text;
+};
+
+type RegisterAvatarRequest = record {
+    name : text;
+    metadata : opt text;
+};
+
+type AvatarError = variant {
+    Unauthorized;
+    AvatarAlreadyExists;
+    InvalidName;
+    NotFound;
+};
+
+service : {
+    register_avatar : (RegisterAvatarRequest) -> (variant { Ok : Avatar; Err : AvatarError });
+    get_avatar : (principal) -> (variant { Ok : Avatar; Err : AvatarError }) query;
+    get_my_avatar : () -> (variant { Ok : Avatar; Err : AvatarError }) query;
+    update_avatar_metadata : (text) -> (variant { Ok : Avatar; Err : AvatarError });
+    list_avatars : () -> (vec Avatar) query;
+}
