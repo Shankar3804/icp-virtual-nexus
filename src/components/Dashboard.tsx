@@ -4,7 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Avatar, Ticket, VirtualReality, LogOut, User, Calendar } from "lucide-react";
+import { UserCircle, Ticket, Headphones, LogOut, User, Calendar } from "lucide-react";
 import { toast } from "sonner";
 
 interface DashboardProps {
@@ -89,7 +89,7 @@ export const Dashboard = ({ user, onEnterVR, onLogout }: DashboardProps) => {
         {/* Main Action */}
         <Card className="mb-8 bg-gradient-to-r from-cyan-500/20 to-purple-500/20 border-cyan-400/30 animate-scale-in">
           <CardContent className="p-8 text-center">
-            <VirtualReality className="w-16 h-16 text-cyan-400 mx-auto mb-4" />
+            <Headphones className="w-16 h-16 text-cyan-400 mx-auto mb-4" />
             <h2 className="text-2xl font-bold text-white mb-4">Ready to Enter VR?</h2>
             <p className="text-gray-300 mb-6">
               Join the immersive 3D virtual world and interact with other users in real-time
@@ -99,7 +99,7 @@ export const Dashboard = ({ user, onEnterVR, onLogout }: DashboardProps) => {
               size="lg"
               className="bg-gradient-to-r from-cyan-500 to-purple-500 hover:from-cyan-600 hover:to-purple-600 text-white font-semibold px-8 py-3 rounded-full transition-all duration-300 hover:scale-105"
             >
-              <VirtualReality className="w-5 h-5 mr-2" />
+              <Headphones className="w-5 h-5 mr-2" />
               Launch VR Experience
             </Button>
           </CardContent>
@@ -110,7 +110,7 @@ export const Dashboard = ({ user, onEnterVR, onLogout }: DashboardProps) => {
           <Card className="bg-white/10 backdrop-blur-sm border-white/20 animate-fade-in">
             <CardHeader>
               <CardTitle className="flex items-center text-white">
-                <Avatar className="w-5 h-5 mr-2 text-purple-400" />
+                <UserCircle className="w-5 h-5 mr-2 text-purple-400" />
                 Avatar Registration
               </CardTitle>
             </CardHeader>

@@ -1,10 +1,10 @@
 
 import { Card, CardContent } from "@/components/ui/card";
-import { Cube, Users, Ticket, Avatar } from "lucide-react";
+import { Box, Users, Ticket, UserCircle } from "lucide-react";
 
 const features = [
   {
-    icon: Cube,
+    icon: Box,
     title: "3D Virtual Worlds",
     description: "Explore immersive 3D environments built with Three.js and WebGL technology"
   },
@@ -19,7 +19,7 @@ const features = [
     description: "Mint and manage event tickets as NFTs secured by blockchain smart contracts"
   },
   {
-    icon: Avatar,
+    icon: UserCircle,
     title: "Custom Avatars",
     description: "Create and customize your virtual identity with persistent avatar registration"
   }
